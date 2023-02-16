@@ -99,7 +99,7 @@ contract APermissionToken is EIP6366Core, EIP6366Meta {
         _setDescription(
             PERMISSION_MASTER,
             "PERMISSION_MASTER",
-            "Permission owner able to mint and update desscription"
+            "Permission owner able to mint and update description"
         );
         _setDescription(
             ROLE_ADMIN,
