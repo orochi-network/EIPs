@@ -12,17 +12,30 @@ created: 2023-02-27
 
 ## Abstract
 
-This EIP offers a standard to build permission and role system based on bits. Each permission is represented by a single bit in `uint256` from which we can defined up to `256` permissions and `2²⁵⁶` roles. This approach use bitwise operator and bitmask to determine the access right which is much more efficient and flexible than `string` comparison or `keccak256(string)`. We are able to specify the importance of permission based on the bit order.
+This EIP offers a standard for building a bit-based permission and role system. Each permission is represented by a single bit in `uint256` from which we can defined up to `256` permissions and `2²⁵⁶` roles. We are able to specify the importance of permission based on the order of the bits.
 
 ## Motivation
 
-**Role is a combination of multiple permissions**, we can use `OR` operator to combine new role based on multiple permissions, since permissions were defined as a power of two.
+Currently permission and access control are done using `string` or `keccak256(string)` comparaisons (see [EIP-5982](./eip-5982.md)). This is a very user friendly way to do this.
+But by using bitwise and bitmask operations to determine access rights, we get a lot of benefits such as efficiency, flexibility and others, let's walk through them.
 
-**Cheaper verification**, Doing `AND` operator on a permission bitmask, it’s much more cheaper than other approach `keccak256(string)`.
+### **Gas cost efficiency**:
 
-**Ordering permission by its importance**, We can use the most significant bit to represent for the most important permission, the comparison can be done easily since it all are `uint256`s.
+Bitwise operations are very cheap and fast. For example doing an `AND` bitwise operation on a permission bitmak is cheaper than other comparaison.
 
-**Flexibility**, 256 permissions define up to 2²⁵⁶ different roles, and all roles don't have to be predefined.
+### **Flexibility**:
+
+With the `256` bits of the `uint256`, we can create up to `256` differents permissions which leads to `2²⁵⁶` unique combinaisons also called roles.
+*(A role is a combination of multiple permissions).* All roles don't have to be predefined.
+
+Since permissions are defined as powers of two, we can use the `OR` operator to create new role based on multiple permissions.
+
+### **Ordering permissions by importance**:
+
+We can use the most significant bit to represent the most important permission, the comparison between permissions can then be done easily since they all are `uint256`s.
+
+### **Permission subsets**:
+TODO
 
 ## Specification
 
