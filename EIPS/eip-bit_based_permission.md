@@ -30,7 +30,7 @@ With the `256` bits of the `uint256`, we can create up to `256` differents permi
 
 Since permissions are defined as powers of two, we can use the `OR` operator to create new role based on multiple permissions.
 
-### **Ordering permissions by importance**:
+### Ordering permissions by importance
 
 We can use the most significant bit to represent the most important permission, the comparison between permissions can then be done easily since they all are `uint256`s.
 
