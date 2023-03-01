@@ -23,7 +23,7 @@ But by using bitwise and bitmask operations to determine access rights, we get a
 
 Bitwise operations are very cheap and fast. For example doing an `AND` bitwise operation on a permission bitmak is cheaper than other comparaison.
 
-### **Flexibility**:
+### Flexibility
 
 With the `256` bits of the `uint256`, we can create up to `256` differents permissions which leads to `2²⁵⁶` unique combinaisons also called roles.
 *(A role is a combination of multiple permissions).* All roles don't have to be predefined.
