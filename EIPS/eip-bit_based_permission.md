@@ -33,6 +33,7 @@ _Note_ The following specifications use syntax from Solidity `0.8.7` (or above)
 - Permission and role MUST be defined as an `uint256`
 - Permission MUST be defined as power of two
 - Permission MUST be unique
+- `0` MUST be used for none permission
 
 An example of define new permissions and roles:
 
