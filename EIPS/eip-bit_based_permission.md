@@ -44,7 +44,7 @@ _Note_ The following specifications use syntax from Solidity `0.8.7` (or above)
 - Permission MUST be defined as power of two
 - Permission MUST be unique
 
-### Defining new permissions and roles:
+### Defining new permissions and roles
 
 ```text
 const PERMISSION_NONE = 0;
