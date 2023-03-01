@@ -34,9 +34,6 @@ Since permissions are defined as powers of two, we can use the `OR` operator to 
 
 We can use the most significant bit to represent the most important permission, the comparison between permissions can then be done easily since they all are `uint256`s.
 
-### **Permission subsets**:
-TODO
-
 ## Specification
 
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in RFC 2119 and RFC 8174.
