@@ -19,7 +19,7 @@ This EIP offers a standard for building a bit-based permission and role system. 
 Currently permission and access control are done using `string` or `keccak256(string)` comparaisons (see [ERC-5982](./eip-5982.md)). This is a very user friendly way to do this.
 But by using bitwise and bitmask operations to determine access rights, we get a lot of benefits such as efficiency, flexibility and others, let's walk through them.
 
-### **Gas cost efficiency**:
+### Gas cost efficiency
 
 Bitwise operations are very cheap and fast. For example doing an `AND` bitwise operation on a permission bitmak is cheaper than other comparaison.
 
