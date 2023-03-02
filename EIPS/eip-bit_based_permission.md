@@ -41,7 +41,7 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 _Note_ The following specifications use syntax from Solidity `0.8.7` (or above)
 
 - Permission and role MUST be defined as an `uint256`
-- Permission MUST be defined as power of two
+- Permission MUST be defined as a power of two
 - Permission MUST be unique
 
 ### Defining new permissions and roles
