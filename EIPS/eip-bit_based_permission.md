@@ -62,10 +62,10 @@ const ROLE_ADMIN = PERMISSION_READ | PERMISSION_WRITE | PERMISSION_EXECUTE;
 
 ### Checking permission
 
-To verify if some permissions are owned, you need to apply a bitmask of it to the `ownedPermission`.
+To verify if owned permissions are a superset of required permissions, you need to apply a bitmask of `requiredPermission` to the `ownedPermission`.
  
 ```text
-ownedPermission & ROLE_OPERATOR == ROLE_OPERATOR
+ownedPermission & requiredPermission == requiredPermission
 ```
 
 ## Rationale
