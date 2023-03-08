@@ -55,7 +55,7 @@ contract APermissionToken is EIP6366Core, EIP6366Meta {
      */
     modifier allow(uint256 required) {
         address owner = msg.sender;
-        if (!_permissionRequire(required, _permissionOf(owner))) {
+        if (!_permissionRequire(_permissionOf(owner), required)) {
             revert IEIP6366Error.AccessDenied(owner, owner, required);
         }
         _;
@@ -65,7 +65,7 @@ contract APermissionToken is EIP6366Core, EIP6366Meta {
      * @dev Deny blacklisted address
      */
     modifier notBlacklisted() {
-        if (_permissionRequire(PERMISSION_DENIED, _permissionOf(msg.sender))) {
+        if (_permissionRequire(_permissionOf(msg.sender), PERMISSION_DENIED)) {
             revert IEIP6366Error.AccessDenied(
                 msg.sender,
                 msg.sender,
@@ -79,8 +79,16 @@ contract APermissionToken is EIP6366Core, EIP6366Meta {
      * @dev Construct ERC-6366
      */
     constructor() EIP6366Meta("Ecosystem A Permission Token", "APT") {
-        _setDescription(PERMISSION_DENIED, "PERMISSION_DENIED", "Blacklisted address");
-        _setDescription(PERMISSION_VOTE, "PERMISSION_VOTE", "Permission owner able to vote");
+        _setDescription(
+            PERMISSION_DENIED,
+            "PERMISSION_DENIED",
+            "Blacklisted address"
+        );
+        _setDescription(
+            PERMISSION_VOTE,
+            "PERMISSION_VOTE",
+            "Permission owner able to vote"
+        );
         _setDescription(
             PERMISSION_TRANSFER,
             "PERMISSION_TRANSFER",
@@ -111,7 +119,7 @@ contract APermissionToken is EIP6366Core, EIP6366Meta {
             "ROLE_OPERATOR",
             "Operator role can execute and vote"
         );
-        
+
         // Assign master permission to deployer
         _mint(msg.sender, PERMISSION_MASTER);
     }
