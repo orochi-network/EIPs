@@ -92,22 +92,22 @@ contract APermissionToken is EIP6366Core, EIP6366Meta {
         _setDescription(
             PERMISSION_TRANSFER,
             "PERMISSION_TRANSFER",
-            "Permission owner able to transfer"
+            "Permission owner can transfer"
         );
         _setDescription(
             PERMISSION_EXECUTE,
             "PERMISSION_EXECUTE",
-            "Permission owner able to execute"
+            "Permission owner can execute"
         );
         _setDescription(
             PERMISSION_CREATE,
             "PERMISSION_CREATE",
-            "Permission owner able to create"
+            "Permission owner can create"
         );
         _setDescription(
             PERMISSION_MASTER,
             "PERMISSION_MASTER",
-            "Permission owner able to mint and update description"
+            "Permission owner can mint and update description"
         );
         _setDescription(
             ROLE_ADMIN,
