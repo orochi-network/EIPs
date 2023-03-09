@@ -87,7 +87,7 @@ contract APermissionToken is EIP6366Core, EIP6366Meta {
         _setDescription(
             PERMISSION_VOTE,
             "PERMISSION_VOTE",
-            "Permission owner able to vote"
+            "Permission owner can vote"
         );
         _setDescription(
             PERMISSION_TRANSFER,
