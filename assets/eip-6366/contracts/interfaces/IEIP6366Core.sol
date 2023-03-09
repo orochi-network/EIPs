@@ -14,7 +14,7 @@ interface IEIP6366Core {
     event Approval(
         address indexed _owner,
         address indexed _delegatee,
-        uint256 _permission
+        uint256 indexed _permission
     );
 
     function transfer(
